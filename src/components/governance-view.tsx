@@ -65,7 +65,7 @@ export const GovernanceView = () => {
                                 style={{ fill: '#0071e3', radius: [0, 4, 4, 0] }}
                             />
                         </div>
-                        <div>
+                        {/* <div>
                             <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-6">质量修复趋势 (Remediation Trend)</p>
                             <Line 
                                 data={trendData} 
@@ -77,7 +77,7 @@ export const GovernanceView = () => {
                                 style={{ lineWidth: 4 }}
                                 scale={{ color: { range: ['#ef4444', '#0071e3'] } }}
                             />
-                        </div>
+                        </div> */}
                     </CardContent>
                 </Card>
 
@@ -108,7 +108,7 @@ export const GovernanceView = () => {
                                 ))}
                             </div>
                         </div>
-                        <div>
+                        {/* <div>
                             <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mb-6">严重程度分布比例</p>
                             <div className="flex items-center justify-center pt-2">
                                 <Pie 
@@ -122,7 +122,7 @@ export const GovernanceView = () => {
                                     scale={{ color: { range: ['#1d1d1f', '#ef4444', '#f59e0b', '#0071e3'] } }}
                                 />
                             </div>
-                        </div>
+                        </div> */}
                     </CardContent>
                 </Card>
             </div>

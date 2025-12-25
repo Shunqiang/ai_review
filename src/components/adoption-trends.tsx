@@ -55,37 +55,18 @@ export const AdoptionTrends = () => {
 
     const pieConfig = {
         appendPadding: 10,
-        radius: 0.8,
-        innerRadius: 0.7,
-        legend: { position: 'bottom' },
-        label: {
-            type: 'inner',
-            offset: '-50%',
-            content: '{value}',
-            style: {
-                textAlign: 'center',
-                fontSize: 12,
-                fill: '#fff',
-                fontWeight: 'bold',
-            },
-        },
+        radius: 0.95,
+        innerRadius: 0.6,
+        legend: false,
+        label: false,
         interactions: [{ type: 'element-active' }],
-        statistic: {
-            title: false,
-            content: {
-                style: {
-                    fontSize: '18px',
-                    fontWeight: 'bold',
-                },
-            },
-        },
     };
 
     return (
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <Card className="lg:col-span-2 overflow-hidden border-none shadow-apple bg-white">
                 <CardHeader className="px-8 pt-8 pb-4">
-                    <CardTitle className="text-xl font-bold flex items-center justify-between">
+                    <CardTitle className="text-xl text-muted-foreground font-bold flex items-center justify-between">
                         使用趋势与渗透度
                         <span className="text-[10px] font-bold text-primary bg-primary/5 px-3 py-1 rounded-full uppercase tracking-wider">Growth View</span>
                     </CardTitle>
@@ -102,16 +83,41 @@ export const AdoptionTrends = () => {
                             AI 采纳率 / 误报率
                         </CardTitle>
                     </CardHeader>
-                    <CardContent className="h-48 relative">
+                    <CardContent className="h-56 relative flex items-center justify-center">
                          <Pie 
                             {...pieConfig} 
                             data={adoptionData} 
                             angleField="value" 
                             colorField="type"
-                            color={['#0071e3', '#e5e7eb']} // Blue for adopted, Grey for rejected
-                            statistic={{
-                                content: { formatter: () => '78.4%', style: { fontSize: '24px', fontWeight: 'bold' } }
+                            scale={{
+                                color: {
+                                    range: ['#10b981', '#b5b5b5'], 
+                                },
                             }}
+                            height={180}
+                            annotations={[{
+                                type: 'text',
+                                style: {
+                                    text: 'AI 采纳',
+                                    x: '50%',
+                                    y: '42%',
+                                    textAlign: 'center',
+                                    fontSize: 14,
+                                    fill: '#10b981',
+                                    fontWeight: '500',
+                                },
+                            }, {
+                                type: 'text',
+                                style: {
+                                    text: '78.4%',
+                                    x: '50%',
+                                    y: '58%',
+                                    textAlign: 'center',
+                                    fontSize: 18,
+                                    fontWeight: 'bold',
+                                    fill: '#10b981',
+                                },
+                            }]}
                         />
                     </CardContent>
                 </Card>
@@ -122,16 +128,41 @@ export const AdoptionTrends = () => {
                             严重问题占比
                         </CardTitle>
                     </CardHeader>
-                    <CardContent className="h-48 relative">
+                    <CardContent className="h-56 relative flex items-center justify-center">
                           <Pie 
                             {...pieConfig} 
                             data={severityData} 
                             angleField="value" 
                             colorField="type" 
-                            color={['#ef4444', '#f5f5f7']} // Red for severe, light grey for others
-                            statistic={{
-                                content: { formatter: () => '12%', style: { fontSize: '24px', fontWeight: 'bold', color: '#ef4444' } }
+                            scale={{
+                                color: {
+                                    range: ['#d81024', '#b5b5b5'], 
+                                },
                             }}
+                            height={180}
+                            annotations={[{
+                                type: 'text',
+                                style: {
+                                    text: '严重问题',
+                                    x: '50%',
+                                    y: '42%',
+                                    textAlign: 'center',
+                                    fontSize: 14,
+                                    fill: '#d81024',
+                                    fontWeight: '500',
+                                },
+                            }, {
+                                type: 'text',
+                                style: {
+                                    text: '12%',
+                                    x: '50%',
+                                    y: '58%',
+                                    textAlign: 'center',
+                                    fontSize: 18,
+                                    fontWeight: 'bold',
+                                    fill: '#d81024',
+                                },
+                            }]}
                         />
                     </CardContent>
                 </Card>

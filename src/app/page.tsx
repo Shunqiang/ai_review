@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { ConfigProvider } from '@ant-design/charts';
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { AdoptionTrends } from "@/components/adoption-trends";
@@ -20,6 +21,13 @@ export default function DashboardPage() {
         <Header />
         
         <main className="flex-1 w-full max-w-[1600px] mx-auto">
+          <ConfigProvider
+          common={{
+            theme: {
+              type: 'light',
+            }
+          }}
+          >
           <div className="p-8 lg:p-16 space-y-12 pb-32">
             <KeyMetrics />
             <AdoptionTrends />
@@ -39,6 +47,7 @@ export default function DashboardPage() {
               </div>
             </footer>
           </div>
+          </ConfigProvider>
         </main>
       </div>
     </div>

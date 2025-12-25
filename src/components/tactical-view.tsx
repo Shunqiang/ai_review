@@ -93,7 +93,7 @@ export const TacticalView = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <Card className="border-none shadow-apple bg-white overflow-hidden">
                     <CardHeader className="px-8 pt-8 pb-2">
-                        <CardTitle className="text-lg font-bold">风险四象限分布 (Risk Quadrant)</CardTitle>
+                        <CardTitle className="text-lg font-bold text-muted-foreground">风险四象限分布 (Risk Quadrant)</CardTitle>
                         <p className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mt-1">
                             X: 变更行数 · Y: 问题数量 · Point: 提交文件
                         </p>
@@ -105,7 +105,7 @@ export const TacticalView = () => {
 
                 <Card className="border-none shadow-apple bg-white overflow-hidden">
                     <CardHeader className="px-8 pt-8 pb-2">
-                         <CardTitle className="text-lg font-bold">模块风险热力图</CardTitle>
+                         <CardTitle className="text-lg font-bold text-muted-foreground">模块风险热力图</CardTitle>
                          <p className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mt-1">
                             Area: 变更密度 · Color: 风险等级
                         </p>
