@@ -70,20 +70,42 @@ export const TacticalView = () => {
 
     const treemapConfig = {
         data: treemapData,
-        colorField: 'name',
+        valueField: 'value',
+        colorField: 'risk',
         height: 320,
+        scale: {
+            color: {
+                domain: [0, 0.4, 0.7, 1],
+                range: ['#10b981', '#f59e0b', '#ef4444', '#dc2626'],
+            },
+        },
         style: {
             stroke: '#fff',
             lineWidth: 2,
             fill: (d: any) => {
-                const risk = d.risk || 0;
-                if (risk > 0.7) return '#ef4444'; 
-                if (risk > 0.4) return '#f59e0b';
-                return '#f2f2f7';
+                // Access nested data structure in Ant Design Charts Treemap
+                const risk = d?.data?.risk ?? d?.risk ?? 0;
+                if (risk > 0.7) return '#ef4444'; // 🟥 High Risk - Red
+                if (risk > 0.4) return '#f59e0b'; // 🟨 Medium Risk - Amber  
+                return '#10b981'; // 🟩 Low Risk - Green
             },
         },
-        tooltip: { formatter: (v: any) => ({ name: v.name, value: `${v.value} LOC` }) },
-        legend: { position: 'top-right' },
+        tooltip: { 
+            formatter: (v: any) => {
+                const riskLabel = v.risk > 0.7 ? '高风险' : v.risk > 0.4 ? '中风险' : '低风险';
+                return { name: v.name, value: `${v.value} LOC · ${riskLabel} (${(v.risk * 100).toFixed(0)}%)` };
+            }
+        },
+        legend: false, // Disable legend since colors represent continuous risk scale
+        label: {
+            text: (d: any) => d.data?.name || d.name,
+            style: {
+                fill: '#fff',
+                fontSize: 12,
+                fontWeight: 'bold',
+                textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
+            },
+        },
     };
 
     return (

@@ -59,7 +59,6 @@ export const StrategicView = () => {
         seriesField: 'project',
         stack: {
             groupBy: ['x', 'series'],
-            series: false,
         },
 
         colorField: 'type',

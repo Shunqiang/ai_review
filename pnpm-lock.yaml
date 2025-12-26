@@ -26,6 +26,9 @@ dependencies:
   drizzle-orm:
     specifier: ^0.45.0
     version: 0.45.0(mysql2@3.15.3)
+  embla-carousel-autoplay:
+    specifier: ^8.6.0
+    version: 8.6.0(embla-carousel@8.6.0)
   lucide-react:
     specifier: ^0.556.0
     version: 0.556.0(react@19.2.1)
@@ -47,6 +50,9 @@ dependencies:
   recharts:
     specifier: ^3.5.1
     version: 3.5.1(@types/react@19.2.7)(react-dom@19.2.1)(react-is@19.2.1)(react@19.2.1)(redux@5.0.1)
+  swiper:
+    specifier: ^12.0.3
+    version: 12.0.3
   tailwind-merge:
     specifier: ^3.4.0
     version: 3.4.0
@@ -3421,6 +3427,18 @@ packages:
   /electron-to-chromium@1.5.267:
     resolution: {integrity: sha512-0Drusm6MVRXSOJpGbaSVgcQsuB4hEkMpHXaVstcPmhu5LIedxs1xNK/nIxmQIU/RPC0+1/o0AVZfBTkTNJOdUw==}
 
+  /embla-carousel-autoplay@8.6.0(embla-carousel@8.6.0):
+    resolution: {integrity: sha512-OBu5G3nwaSXkZCo1A6LTaFMZ8EpkYbwIaH+bPqdBnDGQ2fh4+NbzjXjs2SktoPNKCtflfVMc75njaDHOYXcrsA==}
+    peerDependencies:
+      embla-carousel: 8.6.0
+    dependencies:
+      embla-carousel: 8.6.0
+    dev: false
+
+  /embla-carousel@8.6.0:
+    resolution: {integrity: sha512-SjWyZBHJPbqxHOzckOfo8lHisEaJWmwd23XppYFYVh10bU66/Pn5tkVkbkCMZVdbUE5eTCI2nD8OyIP4Z+uwkA==}
+    dev: false
+
   /emoji-regex@9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==, tarball: https://r2.cnpmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz}
     dev: true
@@ -5732,6 +5750,11 @@ packages:
 
   /svg-path-parser@1.1.0:
     resolution: {integrity: sha512-jGCUqcQyXpfe38R7RFfhrMyfXcBmpMNJI/B+4CE9/Unkh98UporAc461GTthv+TVDuZXsBx7/WiwJb1Oh4tt4A==, tarball: https://r2.cnpmjs.org/svg-path-parser/-/svg-path-parser-1.1.0.tgz}
+    dev: false
+
+  /swiper@12.0.3:
+    resolution: {integrity: sha512-BHd6U1VPEIksrXlyXjMmRWO0onmdNPaTAFduzqR3pgjvi7KfmUCAm/0cj49u2D7B0zNjMw02TSeXfinC1hDCXg==}
+    engines: {node: '>= 4.7.0'}
     dev: false
 
   /tailwind-merge@3.4.0:
